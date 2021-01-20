@@ -13,19 +13,19 @@ const sortArrayOf012 = function(arr){
     }
     i = 0; 
       
-    // Store all the 0s in the beginning 
+    // Storing all the 0s in the beginning 
     while (c0 > 0) { 
         arr[i++] = 0; 
         c0--; 
     } 
   
-    // Then all the 1s 
+    // Counting the 1s and storing
     while (c1 > 0) { 
         arr[i++] = 1; 
         c1--; 
     } 
   
-    // Finally all the 2s 
+    // Counting the 2s and storing
     while (c2 > 0) { 
         arr[i++] = 2; 
         c2--; 
