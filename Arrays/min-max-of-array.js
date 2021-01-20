@@ -1,12 +1,16 @@
-// const minMaxOfArray = function(arr){
-//     let min = arr[0],max=arr[0];
-//     for(let i=0;i<arr.length;i++){
-//         if(arr[i]>max) max=arr[i];
-//         if(arr[i]<min) min = arr[i]
-//     }
-//     return [min,max];
-// }
+//Linear Approach
+/*
+const minMaxOfArray = function(arr){
+    let min = arr[0],max=arr[0];
+    for(let i=0;i<arr.length;i++){
+        if(arr[i]>max) max=arr[i];
+        if(arr[i]<min) min = arr[i]
+    }
+    return [min,max];
+}
+*/
 
+//Pairwise Approach
 const minMaxOfArray = function(arr){
     let min,max,i;
     let len = arr.length;
@@ -22,7 +26,6 @@ const minMaxOfArray = function(arr){
     }
 
     while(i<len-1){
-        console.log("Start : " + min +","+ max+","+i);
         if(arr[i]>arr[i+1]){
             max = arr[i]>max?arr[i]:max;
             min = arr[i+1]<min?arr[i+1]:min;
@@ -31,7 +34,6 @@ const minMaxOfArray = function(arr){
                 min = arr[i]<min?arr[i]:min;
         }
         i = i+2;
-        console.log("End : " + min +","+ max+","+i);
     }
     return [min,max];
 } 
