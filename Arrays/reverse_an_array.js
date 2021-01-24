@@ -25,7 +25,7 @@ class Reverse {
     static reverseArray(arr){
         let start = 0;
         let end = arr.length -1;
-        while(start!==end){
+        while(start<=end){
             let temp = arr[start];
             arr[start] = arr[end];
             arr[end] = temp;
@@ -37,5 +37,5 @@ class Reverse {
 }
 
 console.log(Reverse.reverseArray(["Orange","Apple","Grapes"])); //output -> [ 'Grapes', 'Apple', 'Orange' ]
-console.log(reverseArrayFunc([4, 5, 1, 2]) );//output -> [ 2, 1, 5, 4 ]
+console.log(Reverse.reverseArray([4, 5, 1, 2]) );//output -> [ 2, 1, 5, 4 ]
 console.log(Reverse.reverseArray([4, 5, 1, 2,11,25,4]));//output -> [ 4, 25, 11, 2, 1 , 5, 4]
