@@ -32,7 +32,7 @@ const kthSmallest = function(...currArgs){
     //         }
     //     }
     // }
-    arr = mergeSort(arr);
+    arr = Sort.mergeSort(arr);
     //return kth smallest element
    return arr[k-1];
 }
@@ -43,19 +43,20 @@ const kthSmallest = function(...currArgs){
 //         this.sortedArr = []
 //     }
 
-    function mergeSort(arr){
+    class Sort {
+    static mergeSort(arr){
       let len = arr.length;
       if(len<=1) return arr;
       let mid = Math.floor(len/2);
       let left = arr.slice(0,mid);
       let right = arr.slice(mid,len);
       
-      return merge(
-        mergeSort(left),
-        mergeSort(right)
+      return Sort.merge(
+        Sort.mergeSort(left),
+        Sort.mergeSort(right)
       );
     }
-    function merge(leftArr,rightArr){
+    static merge(leftArr,rightArr){
         const lLen = leftArr.length;
         const rLen = rightArr.length;
         let i=0,j=0;
@@ -72,8 +73,7 @@ const kthSmallest = function(...currArgs){
         }
         return [...merged,...leftArr.slice(i,lLen),...rightArr.slice(j,rLen)];
     }
-   
-
+}
 
 const smallestInArrays = function(...args){
     let init =1;
