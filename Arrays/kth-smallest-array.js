@@ -37,11 +37,6 @@ const kthSmallest = function(...currArgs){
    return arr[k-1];
 }
 
-// class Sort{
-//     constructor(_arr){
-//         this.arr = _arr;
-//         this.sortedArr = []
-//     }
 
     class Sort {
     static mergeSort(arr){

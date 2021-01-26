@@ -33,4 +33,41 @@ const sortArrayOf012 = function(arr){
     return arr;
 }
 
+//Dutch National Flag Algorithm or 3 way partitioning
+class DNF {
+    static sort(arr){
+        let len = arr.length;
+        if(len<=1) return arr;
+        let low = 0;
+        let mid = 0;
+        let high = len-1;
+        while(mid<=high){
+            let curr= arr[mid];
+            switch(curr) {
+                case 0 :
+                    arr[low] = arr[low] + arr[mid];
+                    arr[mid] = arr[low]-arr[mid];
+                    arr[low] = arr[low]-arr[mid];
+                    low++;
+                    mid++;
+                break;
+                case 1 : 
+                    mid++;
+                break;
+                case 2 :
+                    arr[high] = arr[high] + arr[mid];
+                    arr[mid] = arr[high]-arr[mid];
+                    arr[high] = arr[high]-arr[mid]; 
+                    high --;
+                break;
+                default :
+                    arr[mid] = arr[mid];
+            }
+        }
+        return arr;
+    }
+
+}
+
 console.log(sortArrayOf012([0, 1, 1, 0, 1, 2, 1, 2, 0, 0, 0, 1 ]));
+console.log(DNF.sort([0, 1, 1, 0, 1, 2, 1, 2, 0, 0, 0, 1 ]));
