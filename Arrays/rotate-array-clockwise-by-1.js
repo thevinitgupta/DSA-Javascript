@@ -60,6 +60,28 @@ class RotateArrayClockwise {
     } 
      
 }
+
+class RotateArrayAntiClockwise {
+    static blockSwap(arr,d){
+        let len = arr.length;
+       arr =  RotateArrayAntiClockwise.reverse(arr,0,d-1);
+       arr =  RotateArrayAntiClockwise.reverse(arr,0,len-1);
+       arr =  RotateArrayAntiClockwise.reverse(arr,0,len-1-d);
+      
+       return arr;
+    }
+    static reverse(arr,low,high){
+        while(low<high){
+            let temp = arr[low];
+            arr[low] = arr[high];
+            arr[high] = temp;
+            low++;
+            high--;
+        }
+        return arr;
+    }
+}
 console.log(rotateAntiClockwiseByOne([9, 8, 7, 6, 4, 2, 1, 3]))
 console.log(RotateArrayClockwise.blockSwap([9, 8, 7, 6, 4, 2, 1, 3],1));
 console.log(RotateArrayClockwise.jugglingMethod([9, 8, 7, 6, 4, 2, 1, 3],3));
+console.log(RotateArrayAntiClockwise.blockSwap([1,2,3,4,5],2))
