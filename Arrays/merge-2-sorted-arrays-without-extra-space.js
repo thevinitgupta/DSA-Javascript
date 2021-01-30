@@ -50,7 +50,7 @@ class MergeWithoutExtraSpace {
         
         for (gap = parseInt(MergeWithoutExtraSpace.nextGap(gap)); gap > 0;gap = parseInt(MergeWithoutExtraSpace.nextGap(gap)))
         {
-            console.log("Start for loop : "+arr1,arr2)
+            //console.log("Start for loop : "+arr1,arr2)
        // comparing elements in the first
        // array.
        for (i = 0; i + gap < n; i++)
@@ -84,7 +84,7 @@ class MergeWithoutExtraSpace {
                    arr2[j + gap] = temp;
                }
        }
-       console.log("End for loop : "+arr1,arr2)
+       //console.log("End for loop : "+arr1,arr2)
    }
         console.log("End of function : "+arr1,arr2)
     }
