@@ -60,4 +60,4 @@ class Heights{
     }  
 }
 
-console.log(Heights.minimizeMaxDiff([1, 5, 8, 10],2));
+console.log(Heights.minimizeMaxDiff([3, 9, 12, 16, 20],3));

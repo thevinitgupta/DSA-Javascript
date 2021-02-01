@@ -45,7 +45,7 @@ class ReachEnd {
              jump++; 
    
              // Check if the current index/position or lesser index 
-             // is the maximum reach polet from the previous indexes 
+             // is the maximum reach from the previous indexes 
              if (i >= maxReach) 
                  return -1; 
    
