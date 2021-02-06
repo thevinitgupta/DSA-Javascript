@@ -1,11 +1,15 @@
 class FindSubArray{
     static withSumZero(arr,n){
-        if(arr.indexOf(0)) return true;
-        let i=0,j=0;
-        let currSum =0;
-        while(i>=0&&j<n){
-            if()
-            if(currSum===0) return true;
+        let sumTillHere = 0;
+        let prevSum = Number.MIN_VALUE;
+        let start = 0;
+        for(let end=0;end<n-1;end++){
+            sumTillHere += arr[end];
+            if(sumTillHere===0) return true;
+            if(sumTillHere<prevSum){
+
+            }
+            prevSum = sumTillHere;
         }
     }
 }
