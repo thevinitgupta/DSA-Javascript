@@ -15,5 +15,19 @@ class FindDisappeared{
         }
         return missing;
     }
+
+    //more efficient in space and time -> O(n)
+    static numbersInArray(nums){
+        let missing=[];
+        let length = nums.length;
+        for(let i =0;i<length;i++){
+            let curr = Math.abs(nums[i]);
+            nums[curr-1] = -Math.abs(nums[curr-1]);
+        }
+        for(let i=0;i<length;i++){
+            if(nums[i]>0) missing.push(i+1);
+        }
+        return missing;
+    }
 }
 
