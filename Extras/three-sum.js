@@ -68,9 +68,7 @@ var twoSum = function(nums, left, res, target) {
     let right = nums.length -1; 
     
     while(left < right){    
-        const 
-        low = nums[left], 
-        high = nums[right]; 
+        const low = nums[left], high = nums[right]; 
         if (low + high < target){
             left+= 1; 
         } else if (low + high > target){
