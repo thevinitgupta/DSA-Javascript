@@ -81,7 +81,26 @@ class Sort {
         }
         return [...merged,...leftArr.slice(i,lLen),...rightArr.slice(j,rLen)];
     }
+
+    static insertionSort(arr){
+        let len = arr.length;
+        if(len<=1) return arr;
+        let i=1;
+        let temp =0;
+        while(i<len){
+            temp=arr[i];
+            let j=i-1;
+            while(j>=0 && arr[j]>temp){
+                arr[j+1] = arr[j];
+                j--;
+            }
+            arr[j+1]=temp;
+            i++;
+        }
+        return arr;
+    }
 }
 
 console.log(FindMinimumSumOfProducts.forTwoArrays([3, 1, 1],[6, 5, 4]))
 console.log(FindMinimumSumOfProducts.forTwoArrays([6, 1, 9, 5, 4],[ 3, 4, 8, 2, 4]))
+console.log(Sort.insertionSort([6, 1, 9, 5, 4]));
