@@ -1,6 +1,9 @@
 //different sorting algorithms
 
 class Sort {
+    Sort(_arr){
+        this.arr = _arr;
+    }
     static mergeSort(arr){
       let len = arr.length;
       if(len<=1) return arr;
@@ -47,4 +50,45 @@ class Sort {
         }
         return arr;
     }
+    static quickSort(arr){
+        return Sort.quick(arr,0,arr.length-1);
+    }
+    static quick(arr,lb,ub){
+        if(ub<=1) return arr;
+        let loc;
+        if(lb<ub){
+           let part = Sort.partition(arr,lb,ub);
+           arr = part.arr;
+           loc = part.loc;
+           Sort.quick(arr,lb,loc-1);
+           Sort.quick(arr,loc+1,ub)
+        }
+        return arr;
+    }
+    static partition(arr,lb,ub){
+        let pivot = arr[lb];
+        let start = 0,end = ub;
+        while(start<end){
+            while(arr[start]<=pivot){
+                start++;
+            }
+            while(arr[end]>pivot){
+                end--;
+            }
+            if(start<end){
+                let temp = arr[start];
+                arr[start] = arr[end];
+                arr[end] = temp;
+            }
+
+        }
+        let t = arr[end];
+        arr[end] = pivot;
+        arr[lb] = t;
+        return {arr:arr,loc:end};
+    }
 }
+
+
+console.log(Sort.quickSort([2,7,1,3,9,1]))
+console.log(Sort.quickSort([17,12,11,6,3]))
