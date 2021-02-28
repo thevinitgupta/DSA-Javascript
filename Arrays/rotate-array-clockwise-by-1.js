@@ -81,7 +81,9 @@ class RotateArrayAntiClockwise {
         return arr;
     }
 }
-console.log(rotateAntiClockwiseByOne([9, 8, 7, 6, 4, 2, 1, 3]))
-console.log(RotateArrayClockwise.blockSwap([9, 8, 7, 6, 4, 2, 1, 3],1));
-console.log(RotateArrayClockwise.jugglingMethod([9, 8, 7, 6, 4, 2, 1, 3],3));
-console.log(RotateArrayAntiClockwise.blockSwap([1,2,3,4,5],2))
+module.exports =  RotateArrayClockwise;
+
+// console.log(rotateAntiClockwiseByOne([9, 8, 7, 6, 4, 2, 1, 3]))
+// console.log(RotateArrayClockwise.blockSwap([9, 8, 7, 6, 4, 2, 1, 3],1));
+// console.log(RotateArrayClockwise.jugglingMethod([9, 8, 7, 6, 4, 2, 1, 3],3));
+// console.log(RotateArrayAntiClockwise.blockSwap([1,2,3,4,5],2))

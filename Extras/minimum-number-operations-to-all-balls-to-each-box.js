@@ -10,6 +10,10 @@
     *?1) First box: you will have to move one ball from the second box to the first box in one operation.
     *?2) Second box: you will have to move one ball from the first box to the second box in one operation.
     *?3) Third box: you will have to move one ball from the first box to the third box in two operations, and move one ball from the second box to the third box in one operation.
+
+    
+    *TODO Runtime: 336 ms, faster than 100.00% of JavaScript online submissions for Minimum Number of Operations to Move All Balls to Each Box.
+    *TODO Memory Usage: 41.8 MB, less than 100.00% of JavaScript online submissions for Minimum Number of Operations to Move All Balls to Each Box.
  */
 
 function minOperations(boxes){

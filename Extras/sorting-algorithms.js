@@ -89,6 +89,7 @@ class Sort {
     }
 }
 
+module.exports = Sort;
 
-console.log(Sort.quickSort([2,7,1,3,9,1]))
-console.log(Sort.quickSort([17,12,11,6,3]))
+// console.log(Sort.quickSort([2,7,1,3,9,1]))
+// console.log(Sort.quickSort([17,12,11,6,3]))
