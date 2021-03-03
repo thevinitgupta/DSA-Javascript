@@ -92,7 +92,7 @@ class Sort {
     }
     static partition(arr,lb,ub){
         let pivot = arr[lb];
-        let start = 0,end = ub;
+        let start = lb,end = ub;
         while(start<end){
             while(arr[start]<=pivot){
                 start++;
@@ -117,6 +117,7 @@ class Sort {
 module.exports = Sort;
 
 // console.log(Sort.quickSort([2,7,1,3,9,1]))
-// console.log(Sort.quickSort([17,12,11,6,3]))
-console.log(Sort.mergeSort([2,7,1,3,9,1],"d"));
-console.log(Sort.mergeSort([2,7,1,3,9,1],"i"));
+// console.log(Sort.quickSort([2,17,12,11,6,3]))
+// console.log(Sort.quickSort([1,9,3,10,4,20,2]))
+// console.log(Sort.mergeSort([2,7,1,3,9,1],"d"));
+// console.log(Sort.mergeSort([2,7,1,3,9,1],"i"));
