@@ -42,10 +42,42 @@ class TrappingRainwater {
         } 
         return water;
     }
+
+    //not working
+    static lowerEnvelope(height,n){
+        if(n<3) return 0;
+        let left=0,right=n-1,water = 0;
+        let lMax=height[left],rMax = height[right];
+        left++;right--;
+        while(left<right){
+            if (height[left] < height[right]) {
+                height[left] >= lMax ? (lMax = height[left]) : water += (lMax - height[left]);
+                ++left;
+            }
+            else {
+                height[right] >= rMax ? (rMax = height[right]) : water += (rMax - height[right]);
+                --right;
+            }
+            
+        }
+        return water;
+    }
 }
 
 //console.log(TrappingRainwater.bruteForce([8,8,2,4,5,5,1],7))
-//console.log(TrappingRainwater.bruteForce([7,4,0,9],4))
+console.log(TrappingRainwater.lowerEnvelope([7,4,0,9],4))
 //console.log(TrappingRainwater.bruteForce([3,0,0,2,0,4],6))
 console.log(TrappingRainwater.bruteForce([1, 1, 5, 2, 7, 6, 1, 4, 2, 3],10));
 console.log(TrappingRainwater.preComputing([1, 1, 5, 2, 7, 6, 1, 4, 2, 3],10));
+console.log(TrappingRainwater.lowerEnvelope([1, 1, 5, 2, 7, 6, 1, 4, 2, 3],10));
+
+
+
+// if (height[left] < height[right]) {
+//     height[left] >= left_max ? (left_max = height[left]) : water += (left_max - height[left]);
+//     ++left;
+// }
+// else {
+//     height[right] >= right_max ? (right_max = height[right]) : water += (right_max - height[right]);
+//     --right;
+// }
