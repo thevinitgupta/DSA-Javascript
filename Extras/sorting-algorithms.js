@@ -6,6 +6,7 @@ class Sort {
     }
     static mergeSort(arr,order){
       let len = arr.length;
+      //console.log("Curr Array In Merge Sort: ",arr);
       if(len<=1) return arr;
       let mid = Math.floor(len/2);
       let left = arr.slice(0,mid);
@@ -27,6 +28,8 @@ class Sort {
     static mergeIncrease(leftArr,rightArr){
         const lLen = leftArr.length;
         const rLen = rightArr.length;
+        // console.log("Curr Left Array In Merge: ",leftArr);
+        // console.log("Curr Right Array In Merge: ",rightArr);
         let i=0,j=0;
         let merged = [];
         while(i<lLen&&j<rLen){
@@ -39,6 +42,7 @@ class Sort {
                 j++;
             }
         }
+        //console.log("Sorted array for current call :",[...merged,...leftArr.slice(i,lLen),...rightArr.slice(j,rLen)])
         return [...merged,...leftArr.slice(i,lLen),...rightArr.slice(j,rLen)];
     }
     static mergeDecrease(leftArr,rightArr){

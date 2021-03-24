@@ -13,15 +13,24 @@ class MedianSorted
             // console.log("i :",i," j :",j);
             // console.log("Count :",count);
             if(nums1[i]<nums2[j]){
+                console.log("If block!");
+                console.log("Nums1[i] :",nums1[i]," Nums2[j] :",nums2[j])
                 count += 1;
                 prev = curr;
                 curr = nums1[i];
                 i++;
             }
             else{
+                console.log("Else block!");
+                console.log("Nums1[i] :",nums1[i]," Nums2[j] :",nums2[j])
                 count += 1;
                 prev = curr;
-                curr = nums2[j]>=curr? nums2[j] : curr;
+                if(nums2[j]){
+                    curr = nums2[j]>=curr? nums2[j] : ((curr===undefined)||(curr===null)) ? prev : curr; 
+                }
+                else{
+                    curr = nums1[i];
+                }
                 j++;
             }
             // else {
@@ -81,4 +90,6 @@ class MedianSorted
 console.log("Final Median :",MedianSorted.sameSize([1,2],[3,4]),"\n\n");
 console.log("Final Median :",MedianSorted.sameSize([0,0],[0,0]),"\n\n");
 console.log("Final Median :",MedianSorted.sameSize([0,0,0,0,0],[-1,0,0,0,0,0,1]),"\n\n");
-console.log("Final Median :",MedianSorted.sameSize([1],[3,4]),"\n\n");
+console.log("Final Median :",MedianSorted.sameSize([3,4],[]),"\n\n");
+console.log("Final Median :",MedianSorted.sameSize([4],[]),"\n\n");
+console.log("Final Median :",MedianSorted.sameSize([],[0]),"\n\n");

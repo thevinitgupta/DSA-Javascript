@@ -14,12 +14,18 @@ const rotateAntiClockwiseByOne = function(arr){
     return arr;
 }
 
+//?Left side movement
 class RotateArrayClockwise {
     static blockSwap(arr,d){
         let len = arr.length;
-       arr =  RotateArrayClockwise.reverse(arr,0,d-1);
-       arr =  RotateArrayClockwise.reverse(arr,d,len-1);
-       arr =  RotateArrayClockwise.reverse(arr,0,len-1);
+
+        arr =  RotateArrayClockwise.reverse(arr,0,d-1);
+        console.log("Arr after left part reverse :",arr);
+        arr =  RotateArrayClockwise.reverse(arr,d,len-1);
+        console.log("Arr after right part reverse :",arr);
+        arr =  RotateArrayClockwise.reverse(arr,0,len-1);
+        console.log("Arr after whole reverse :",arr);
+      
        return arr;
     }
     static reverse(arr,low,high){
@@ -61,13 +67,14 @@ class RotateArrayClockwise {
      
 }
 
+//!Right Side Movement
 class RotateArrayAntiClockwise {
     static blockSwap(arr,d){
         let len = arr.length;
-       arr =  RotateArrayAntiClockwise.reverse(arr,0,d-1);
-       arr =  RotateArrayAntiClockwise.reverse(arr,0,len-1);
-       arr =  RotateArrayAntiClockwise.reverse(arr,0,len-1-d);
-      
+        arr =  RotateArrayAntiClockwise.reverse(arr,0,len-1);
+        arr =  RotateArrayAntiClockwise.reverse(arr,0,d-1);
+        arr =  RotateArrayAntiClockwise.reverse(arr,d,len-1);
+        
        return arr;
     }
     static reverse(arr,low,high){
@@ -86,4 +93,6 @@ module.exports =  RotateArrayClockwise;
 // console.log(rotateAntiClockwiseByOne([9, 8, 7, 6, 4, 2, 1, 3]))
 // console.log(RotateArrayClockwise.blockSwap([9, 8, 7, 6, 4, 2, 1, 3],1));
 // console.log(RotateArrayClockwise.jugglingMethod([9, 8, 7, 6, 4, 2, 1, 3],3));
-// console.log(RotateArrayAntiClockwise.blockSwap([1,2,3,4,5],2))
+console.log("Anti Rot ",RotateArrayAntiClockwise.blockSwap([1,2,3,4,5],2))
+console.log("Clock Rot ",RotateArrayClockwise.blockSwap([1,2,3,4,5],2))
+console.log("Clock Rot ",RotateArrayClockwise.jugglingMethod([1,2,3,4,5],2))
