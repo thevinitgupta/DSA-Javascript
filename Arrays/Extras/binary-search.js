@@ -1,6 +1,6 @@
 class Search{
     static binarySearch(arr,lo,hi,tar){
-        while(lo<hi){
+        while(lo<=hi){
             let mid = parseInt((lo+hi)/2);
             if(tar===arr[mid]){
                 return mid;
