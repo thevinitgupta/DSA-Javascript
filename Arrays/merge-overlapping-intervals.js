@@ -41,6 +41,7 @@ class MergeIntervals {
            else {
                i++;
            }
+           console.log("Intervals :",intervals);
        }
        return intervals;
    }
