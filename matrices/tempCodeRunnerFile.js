@@ -1,1 +1,0 @@
-prevCount = prevCount!==count ? count : prevCount;
