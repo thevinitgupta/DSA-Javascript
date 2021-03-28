@@ -5,6 +5,8 @@ class SortMatrix{
         let sorted = [];
         let k=0,l=0;
         let i = 1,len = N*N;
+        
+        //O(N^2)
         while(i<=len){
             sorted.push(Mat[k][l]);
             if(i%N == 0){
@@ -16,9 +18,13 @@ class SortMatrix{
             }
             i++;
         }
+
+        //O(NlogN)
         sorted = Sort.quickSort(sorted);
         Mat = [];
         i=N;k=0;
+
+        //O(log N)
         while(i<=len){
             if(i%N == 0){
                 Mat[k] = [...sorted.slice(i-N,i)];
