@@ -10,6 +10,8 @@ class Matrix{
         console.log("Original matrix :");
         Matrix.printMatrix(matrix,m,n);
         let transpose = [];
+
+        //!slow solution
         for(let i =0;i<n;i++){
             let arr= [];
                for(let j=0;j<m;j++){
@@ -18,17 +20,12 @@ class Matrix{
                console.log("Row :",arr);
             transpose.push([...arr]);
         }
-    // for(let i =0;i<m;i++){
-    //        for(let j=0;j<n;j++){
-    //            console.log("For ",i,",",j," <--> ",j,",",i,);
-    //            console.log("Matrix[",i,"][",j,"] -> ",matrix[i][j]);
-    //           transpose[j][i] = matrix[i][j];
-    //           console.log("Transpose[",j,"][",i,"] -> ",transpose[j][i]);     
-    //        }
-    //        console.log("Transpose ->",transpose[i]);
-    //    }
-       console.log("Transpose matrix :");
+        console.log("Transpose matrix :");
        Matrix.printMatrix(transpose,n,m);
+
+        //?faster solution 
+        return matrix[0].map((_,  i) => matrix.map(b => b[i]));
+       
    }
    static printMatrix(mat,n,m){
     for(let i=0;i<n;i++){
