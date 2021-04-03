@@ -15,7 +15,8 @@ class Search{
         return -1;
     } 
  }
- 
- console.log(Search.binarySearch([2,5,6,9,12],0,4,9));
- console.log(Search.binarySearch([2,5,6,9,12],0,4,2));
- console.log(Search.binarySearch([2,5,6,9,12],0,4,13));
+
+ module.exports = Search;
+//  console.log(Search.binarySearch([2,5,6,9,12],0,4,9));
+//  console.log(Search.binarySearch([2,5,6,9,12],0,4,2));
+//  console.log(Search.binarySearch([2,5,6,9,12],0,4,13));
