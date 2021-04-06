@@ -42,17 +42,21 @@ class LargestPalindrome{
     return cur;
     }
 
-    
+
     static inString(s){
         let length = s.length;
         if(length===0 || s===null) return "";
         let longest = "";
         for(let i=0;i<length;i++){
+            console.log("Looking at i ->",i);
             let oddPal = LargestPalindrome.expandFromMiddle(s,i,i);
             let evenPal = LargestPalindrome.expandFromMiddle(s,i-1,i);
 
             if(oddPal.length>longest.length) longest = oddPal;
             if(evenPal.length>longest.length) longest = evenPal;
+
+            //skipping the rest of the string if i = middle of string which is itself a palindrome as there cannot be a palindrome greater than the string itself
+            if(longest.length===length) break;
         }
         return longest;
     }
@@ -61,6 +65,8 @@ class LargestPalindrome{
         while(str[left-i] && str[left-i]===str[right+i]){
             i++;
         }
+
+        //to reduce the value of i to the last valid value
         i--;
         return str.slice(left-i,right+i+1);
     }
@@ -69,4 +75,4 @@ class LargestPalindrome{
 
 console.log(LargestPalindrome.inString("saababaa"));
 console.log(LargestPalindrome.inString("bb"));
-console.log(LargestPalindrome.expandFromMiddle("aabcbaa",3,3));
+console.log(LargestPalindrome.inString("aabcbaa"));
