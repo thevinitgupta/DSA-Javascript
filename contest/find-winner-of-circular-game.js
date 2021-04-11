@@ -20,12 +20,13 @@
 //     console.log(nums[0]);
 // }
 
+//?Topper solution
 function findTheWinner(n,k){
     let friends = []
     for(let i=0;i<n;i++){
         friends[i]=i+1;
     }
-       let current = 0
+        let current = 0
         for (let j=0;j<n-1;j++){
             current =Math.floor((current+k-1)%(n-j));
             friends.splice(current,1)
