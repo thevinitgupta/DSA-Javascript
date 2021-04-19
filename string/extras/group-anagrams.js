@@ -40,6 +40,7 @@ class Solution {
     //     return true;
     // }
 
+    //?O(n*klogk) -> faster than 76%
     static groupAnagrams(strs){
         let hash = {};
         for(let i=0;i<strs.length;i++){
