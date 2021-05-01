@@ -19,23 +19,19 @@ Return the maximum possible value of an element in arr after performing the oper
 
  var maximumElementAfterDecrementingAndRearranging = function(arr) {
     arr.sort((a,b)=> a-b);
-    console.log("sorted orginal ->",arr)
     if(arr[0]!==1) arr[0] = 1;
     let prev = arr[0],curr;
     for(let i=1;i<arr.length;i++){
         curr = arr[i];
-        console.log(prev,curr)
        if(Math.abs(curr-prev)<=1) {
             prev = arr[i];   
             continue;
         }
        else {
-           console.log("to be updated ->",arr[i])
            arr[i] = prev+1;
            prev = arr[i];
        }
     }
-    console.log("sorted updated ->",arr)
     return arr[arr.length-1];
 };
 
