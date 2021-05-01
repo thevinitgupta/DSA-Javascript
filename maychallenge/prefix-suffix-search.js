@@ -41,7 +41,6 @@ WordFilter.prototype.f = function(prefix, suffix) {
     this.map[prefix][suffix] = index;
     return index;
 };
-};
 
 /** 
  * Your WordFilter object will be instantiated and called as such:
