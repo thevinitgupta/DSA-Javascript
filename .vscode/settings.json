@@ -1,3 +1,4 @@
 {
-    "better-comments.highlightPlainText": true
+    "better-comments.highlightPlainText": true,
+    "codesnap.backgroundColor": "none"
 }
