@@ -12,18 +12,17 @@ Return the shuffled string
  * @param {number[]} indices
  * @return {string}
  */
- var restoreString = function(s, indices) {
-    for(let i=0;i<indices.length;i++){
-        indices[i] = [indices[i],s[i]];
-    }
-    indices = Sort.mergeSort(indices);
-    console.log(indices);
-    s= "";
-    for(let i=0;i<indices.length;i++){
-        s = s + indices[i][1];
-    }
-    return s;
-};
+//  var restoreString = function(s, indices) {
+//     for(let i=0;i<indices.length;i++){
+//         indices[i] = [indices[i],s[i]];
+//     }
+//     indices = Sort.mergeSort(indices);
+//     s= "";
+//     for(let i=0;i<indices.length;i++){
+//         s = s + indices[i][1];
+//     }
+//     return s;
+// };
 
 class Sort {
     static mergeSort(arr){
@@ -54,5 +53,14 @@ class Sort {
     }
 }
 
+
+var restoreString = function(s, indices) {
+    let n= new Array(indices.length);
+    for(let i=0;i<indices.length;i++){
+        n[indices[i]] = s[i];
+    }
+
+    return n.join("");
+};
 
 console.log(restoreString("codeleet",[4,5,6,7,0,2,1,3]))
