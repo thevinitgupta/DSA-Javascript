@@ -10,6 +10,8 @@ Return any answer array that satisfies this condition.
  * @param {number[]} nums
  * @return {number[]}
  */
+
+//*accepted -> O(N), O(N)
  var sortArrayByParityII = function(nums) {
     let k=0,j=1;
     let copy = new Array(j+1).fill(0);
@@ -24,6 +26,25 @@ Return any answer array that satisfies this condition.
         }
     }
     return copy;
+};
+
+//? Faster than 96% -> O(N), less space than 99% -> O(1)
+var sortArrayByParityII = function(nums) {
+    let k=0,j=1;
+    while(k<nums.length){
+        if(nums[k]%2===0){
+            k=k+2;
+        }
+        else {
+            while(nums[j]%2!==0) j+=2;
+            let temp = nums[k];
+            nums[k] = nums[j];
+            nums[j] = temp;
+            j=j+2;
+            k+=2;
+        }
+    }
+    return nums;
 };
 
 
