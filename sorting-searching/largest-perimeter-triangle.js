@@ -19,31 +19,37 @@ function isPossible(a,b,c){
  */
 
 //!very slow solution
- var largestPerimeter = function(nums) {
-    nums.sort((a,b)=> a-b);
-    console.log(nums)
-    let i=nums.length-1;
+//  var largestPerimeter = function(nums) {
+//     nums.sort((a,b)=> a-b);
+//     console.log(nums)
+//     let i=nums.length-1;
     
-    while(i>=0){
-        let j=i-1;
-        while(j>=0){
-            let k=j-1;
-            while(k>=0){
-                if(isPossible(nums[i],nums[j],nums[k])) {
-                    return nums[i]+nums[j]+nums[k];
-                }
-                else k--;
-            }
-            j--;
-        }
-        i--
-    }
+//     while(i>=0){
+//         let j=i-1;
+//         while(j>=0){
+//             let k=j-1;
+//             while(k>=0){
+//                 if(isPossible(nums[i],nums[j],nums[k])) {
+//                     return nums[i]+nums[j]+nums[k];
+//                 }
+//                 else k--;
+//             }
+//             j--;
+//         }
+//         i--
+//     }
     
-    return 0;
-};
+//     return 0;
+// };
 
+
+//* faster solution -> O(N) time
 var largestPerimeter = function(nums){
-    
+    nums.sort((a,b)=> a-b);
+    for (let i = nums.length - 3; i >= 0; --i)
+            if (nums[i] + nums[i+1] > nums[i+2])
+                return nums[i] + nums[i+1] + nums[i+2];
+        return 0;
 }
 
 
