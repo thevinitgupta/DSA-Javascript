@@ -78,7 +78,25 @@ console.log(maxScore([2,2,2], 2));
     return tot;
 };
 
+//*sliding window -> O(N) time solution
+var maxScore = function(cards, k) {
+    let tot = 0,currSum=0;
+    let len = cards.length;
+    for(let i=0;i<len;i++){
+        tot += cards[i];
+    }
+    if(k=== len) return tot;
+    let max = 0;
+    for(let i=0;i<len;i++){
+        currSum += cards[i];
+        if(i>=((len-k)-1)){
+            max = Math.max(max,tot-currSum);
+            currSum -= cards[i-(len-k)+1];
+        }
 
+    }
+    return max;
+}
 
 
 console.log(maxScore([11,49,100,20,86,29,72],4));
