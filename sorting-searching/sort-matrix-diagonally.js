@@ -6,16 +6,13 @@
     let m = mat[0].length,n=mat.length;
 
     const sort = function(i,j){
-        console.log("i,j -> ",i,j)
         let a=i,b=j;
         let diag = [];
         while(a<n && b<m){
             diag.push(mat[a][b]);
             a++;b++;
         }
-        console.log("diag ->",diag);
         diag.sort((a,b)=>a-b);
-        console.log("sorted diag ->",diag);
         a=i;b=j;
         let count = 0;
         while(a<n&& b<m){
