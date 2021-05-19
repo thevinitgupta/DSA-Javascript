@@ -29,3 +29,16 @@ Only two moves are needed (remember each move increments or decrements one eleme
 //     }
 //     return count;
 // };
+
+//*accepted solution -> faster than 82%
+ var minMoves2 = function(nums) {
+    nums.sort((a,b)=> a-b);
+
+    //we need to find the value of the mid of array and not the avg of first and last elements of array(this is done in the above solution)
+    let mid = nums[Math.floor(nums.length/2)];
+    let count=0;
+    for(let i=0;i<nums.length;i++){
+        count += Math.abs(mid-nums[i])
+    }
+    return count;
+};
