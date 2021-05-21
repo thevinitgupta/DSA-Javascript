@@ -19,7 +19,19 @@ Output: Node 3 from this list (Serialization: [3,4,5])
  * @return {ListNode}
  */
 
-//?linear solution -> Time O(N),space O(N)
+//?linear ->  Time O(N),space O(1) -> faster than 34%
+//  var middleNode = function(head) {
+//     let len = 0;
+//     let slow = head;
+//     let fast = head
+//     while(fast&& fast.next){
+//         slow = slow.next;
+//         fast = fast.next.next;
+//     }
+    
+//     return slow;
+// };
+//*linear solution -> Time O(N),space O(N) -> faster than 86%
  var middleNode = function(head) {
     let len = 0;
     let headCopy = head;
