@@ -28,3 +28,21 @@
     head = prev;
     return head;
 };
+
+//* faster than 84%
+var reverseList = function(head){
+    if(!head) return null;
+    let current = head;
+    let prev = null;
+    let next = null;
+    
+    while(current)
+    {
+        next = current.next;
+        current.next = prev;
+        prev = current;
+        current = next;
+    }
+    head = prev;
+    return head;
+}
