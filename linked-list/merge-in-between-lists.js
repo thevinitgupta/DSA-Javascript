@@ -24,6 +24,8 @@ Explanation: We remove the nodes 3 and 4 and put the entire list2 in their place
  * @param {ListNode} list2
  * @return {ListNode}
  */
+
+//?O(M*N) solution 
  var mergeInBetween = function(list1, a, b, list2) {
     let left=list1,right=list2,curr = list1;
     let c1=0,c2=0;
@@ -46,4 +48,30 @@ Explanation: We remove the nodes 3 and 4 and put the entire list2 in their place
         curr = curr.next;
         c1++;
     }
+};
+
+//* O(N) solution
+var mergeInBetween = function(l1, a, b, l2) {
+    const root = l1
+  let aFound = null, bFound = null, prv = null, idx = 0
+  while(l1){
+    if(idx === a){
+      aFound = prv
+    }
+    if(idx === b){
+      bFound = l1.next
+      break
+    }
+    prv = l1
+    l1 = l1.next
+    idx++
+  }
+  aFound.next = l2
+  prv = null
+  while(l2){
+    prv = l2
+    l2 = l2.next    
+  }
+  prv.next = bFound
+  return root
 };
