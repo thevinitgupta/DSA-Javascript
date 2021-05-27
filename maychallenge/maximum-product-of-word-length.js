@@ -22,3 +22,31 @@
     }
     return best
 };
+
+//* faster than 45%
+
+const getAllData = (list) => { // linkedlist -> array
+    let res = [];
+    let current = list;
+    while (current) {
+        res.push(current.val);
+        current = current.next;
+    }
+    return res;
+};
+var nextLargerNodes = function(head) {
+    let a = getAllData(head);
+    let n = a.length;
+    let res = [];
+    for (let i = 0; i < n; i++) {
+        let tmp = 0;
+        for (let j = i + 1; j < n; j++) {
+            if (a[j] > a[i]) {
+                tmp = a[j];
+                break;
+            }
+        }
+        res.push(tmp);
+    }
+    return res;
+};
