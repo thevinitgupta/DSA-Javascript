@@ -14,7 +14,7 @@ You may assume the two numbers do not contain any leading zero, except the numbe
  * @return {ListNode}
  */
 
-//?faster than 17% -> O(max(M,N)) solution
+//?faster than 75% -> O(max(M,N)) solution
  var addTwoNumbers = function(l1, l2) {
     let carry = 0;
     let head = new ListNode(0);
