@@ -19,6 +19,8 @@ You may not modify the values in the list's nodes. Only nodes themselves may be 
  * @param {ListNode} head
  * @return {void} Do not return anything, modify head in-place instead.
  */
+
+//? faster than 25% -> O(3N) solution
  var reorderList = function(head) {
     if (head === null) {
    return;
@@ -82,3 +84,25 @@ function merge (l1, l2) {
    l2 = l2Next;
  }
 }
+
+//* faster than 65% -> O(2N) solution
+var reorderList = function(head) {
+  if (!head || !head.next) return head;
+let prev = head;
+let tail = head.next;
+while (tail) {
+ tail.prev = prev;
+ prev = tail;
+ tail = tail.next;
+}
+let cur = head;
+while (cur !== prev && cur.prev !== prev) {
+ const next = cur.next;
+ cur.next = prev;
+ prev.next = next;
+ prev = prev.prev;
+ cur = next;
+}
+cur.next = null;
+return head;
+}; 
