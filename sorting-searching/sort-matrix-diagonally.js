@@ -2,9 +2,12 @@
  * @param {number[][]} mat
  * @return {number[][]}
  */
+
+
  var diagonalSort = function(mat) {
     let m = mat[0].length,n=mat.length;
-
+    console.log("Original Matrix : ");
+    console.table(mat)
     const sort = function(i,j){
         let a=i,b=j;
         let diag = [];
@@ -27,8 +30,9 @@
     for(let i=1;i<n-1;i++){
         sort(i,0)
     }
+    console.log("\n\nSorted Matrix :");
+    console.table(mat);
     return mat;
 };
 
-
-console.log(diagonalSort([[3,3,1,1],[2,2,1,2],[1,1,1,2]]))
+diagonalSort([[3,3,1,1],[2,2,1,2],[1,1,1,2],[2,1,4,0]]);
