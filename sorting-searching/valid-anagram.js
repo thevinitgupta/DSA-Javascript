@@ -26,8 +26,7 @@ Output: true
     }
     for(let i=0;i<t.length;i++){
         if(map[t[i]]) map[t[i]]--;
-
-         //?if that character is not in the first string, this is a different string so return false;
+        //?if that character is not in the first string, this is a different string so return false;
         else return false;
     }
     for (const [key,value] in map) {
@@ -35,15 +34,13 @@ Output: true
     }
     return true;
 };
-
 //?slower solution 
 // var isAnagram = function(s,t){
 //     if(s.length!==t.length) return false;
 //     s = s.split("").sort().join("");
 //     t = t.split("").sort().join("");
 //      return s===t;
-    
 // }
 
-console.log(isAnagram("anagram","nagaram"));
-console.log(isAnagram("anagram","magaram"));
+console.log(`\n\n"anagram" and "nagaram" are ANAGRAM STRINGS ->`,isAnagram("anagram","nagaram"),"\n\n\n");
+console.log(`"anagram" and "magaram" are ANAGRAM STRINGS ->`,isAnagram("anagram","magaram"),"\n\n\n");

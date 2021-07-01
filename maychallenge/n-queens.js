@@ -37,3 +37,10 @@ Each solution contains a distinct board configuration of the n-queens' placement
     place(0,0,0,0)
     return ans;
 };
+
+console.log("For n=5, N-Queens solution : ");
+console.table(solveNQueens(5));
+console.log("\n\n");
+console.log("For n=4, N-Queens solution : ");
+console.table(solveNQueens(4));
+console.log("\n\n");
