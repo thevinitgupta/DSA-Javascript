@@ -3,6 +3,17 @@
     There is only one repeated number in nums, return this repeated number.
 */
 
+
+//* fastest solution 
+var findDuplicate = function(nums) {
+    let len = nums.length;
+let dup = new Array(len-1);
+for(let i=0;i<len;i++){
+    let curr = nums[i];
+    if(dup[curr-1]) return curr;
+    else dup[curr-1] = curr;
+    }
+}
 //simple solution : O(n)
 var findDuplicate = function(nums) {
     let len = nums.length;
